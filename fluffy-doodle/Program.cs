@@ -32,6 +32,11 @@ int receivedBonus = bethany.CalculateBonus(minimumBonus);
 Console.WriteLine($"Minimum bonus: {minimumBonus}\nReceived bonus: {receivedBonus}");
 
 /* -------- Passing parameters by reference ---------- */
-int bonusTax = 0;
-int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, ref bonusTax);
+//int bonusTax = 0;
+//int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, ref bonusTax);
+//Console.WriteLine($"Minimum bonus: {minimumBonus}\nBonusTax: {bonusTax}\nReceived bonus: {receivedBonus2}");
+
+/* -------- Using out ---------- */
+int bonusTax;
+int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, out bonusTax);
 Console.WriteLine($"Minimum bonus: {minimumBonus}\nBonusTax: {bonusTax}\nReceived bonus: {receivedBonus2}");

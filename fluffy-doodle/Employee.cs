@@ -63,8 +63,9 @@
             return bonus;
         }
 
-        public int CalculateBonusAndBonusTax(int bonus, ref int bonusTax)
+        public int CalculateBonusAndBonusTax(int bonus, out int bonusTax)
         {
+            bonusTax = 0;
             if(numberOfHoursWorked > 10) { bonus *= 2;}
 
             if(bonus >= 200) { 
