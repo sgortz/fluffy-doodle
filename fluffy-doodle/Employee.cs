@@ -18,8 +18,18 @@
         public void PerformWork()
         {
             PerformWork(minimalHoursWorkedUnit);
-            //numberOfHoursWorked++;
-            //Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour(s)!");
+        }
+
+        // constructor overloading
+        public Employee(string first, string last, string em, DateTime bd):this(first, last, em, bd, 0) { }
+
+        public Employee(string first, string last, string em, DateTime bd, double rate)
+        {
+            firstName = first;
+            lastName = last;
+            email = em;
+            birthday = bd;
+            hourlyRate = rate; 
         }
 
         //method overloading
