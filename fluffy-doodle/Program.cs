@@ -19,3 +19,9 @@ Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
 // simplified syntax of instantiation of an object
 Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30);
 george.DisplayEmployeeDetails();
+
+// reference types vs value types
+Employee testEmployee = bethany;
+testEmployee.firstName = "Sabrina";
+testEmployee.DisplayEmployeeDetails();
+bethany.DisplayEmployeeDetails();
