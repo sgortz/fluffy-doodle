@@ -12,16 +12,21 @@
 
         public DateTime birthday;
 
+        // constant variable
+        const int minimalHoursWorkedUnit = 1;
+
         public void PerformWork()
         {
-            numberOfHoursWorked++;
-            Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour(s)!");
+            PerformWork(minimalHoursWorkedUnit);
+            //numberOfHoursWorked++;
+            //Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour(s)!");
         }
 
         //method overloading
         public void PerformWork(int numberOfHours)
         {
             numberOfHoursWorked += numberOfHours;
+            
             Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour(s)!");
         }
 
