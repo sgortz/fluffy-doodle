@@ -15,13 +15,8 @@
         // constant variable
         const int minimalHoursWorkedUnit = 1;
 
-        public void PerformWork()
-        {
-            PerformWork(minimalHoursWorkedUnit);
-        }
-
         // constructor overloading
-        public Employee(string first, string last, string em, DateTime bd):this(first, last, em, bd, 0) { }
+        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0) { }
 
         public Employee(string first, string last, string em, DateTime bd, double rate)
         {
@@ -29,8 +24,13 @@
             lastName = last;
             email = em;
             birthday = bd;
-            hourlyRate = rate; 
+            hourlyRate = rate;
         }
+
+        public void PerformWork()
+        {
+            PerformWork(minimalHoursWorkedUnit);
+        }        
 
         //method overloading
         public void PerformWork(int numberOfHours)
@@ -50,6 +50,31 @@
             if(resetHours ) { numberOfHoursWorked = 0; }
 
             return wage;
+        }
+
+        public int CalculateBonus(int bonus)
+        {
+            if(numberOfHoursWorked > 10)
+            {
+                bonus *= 2;
+            }
+
+            Console.WriteLine($"Employee got a bonus of {bonus}");
+            return bonus;
+        }
+
+        public int CalculateBonusAndBonusTax(int bonus, ref int bonusTax)
+        {
+            if(numberOfHoursWorked > 10) { bonus *= 2;}
+
+            if(bonus >= 200) { 
+                bonusTax = bonus / 10;
+                bonus -= bonusTax;
+            }
+
+            Console.WriteLine($"The employee got a bonus of {bonus} and the tax on the bonus is {bonusTax}");
+
+            return bonus;
         }
 
         public void DisplayEmployeeDetails()

@@ -7,21 +7,31 @@ Employee bethany = new Employee("Bethany", "Smith", "bethany@me.com", new DateTi
 // invoking methods on the new object
 bethany.DisplayEmployeeDetails();
 
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork(5);
-bethany.PerformWork();
-
-double receivedWageBethany = bethany.ReceiveWage(true);
-Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
+//double receivedWageBethany = bethany.ReceiveWage(true);
+//Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
 
 // simplified syntax of instantiation of an object
-Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30);
-george.DisplayEmployeeDetails();
+//Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30);
+//george.DisplayEmployeeDetails();
 
-// reference types vs value types
-Employee testEmployee = bethany;
-testEmployee.firstName = "Sabrina";
-testEmployee.DisplayEmployeeDetails();
-bethany.DisplayEmployeeDetails();
+/* -------- reference types vs value types ---------- */
+//Employee testEmployee = bethany;
+//testEmployee.firstName = "Sabrina";
+//testEmployee.DisplayEmployeeDetails();
+//bethany.DisplayEmployeeDetails();
+
+
+/* -------- Passing parameters by value---------- */
+
+bethany.PerformWork(25);
+
+int minimumBonus = 100;
+int receivedBonus = bethany.CalculateBonus(minimumBonus);
+
+// minimumBonus variable was passed in as a copy, therefore unchanged.
+Console.WriteLine($"Minimum bonus: {minimumBonus}\nReceived bonus: {receivedBonus}");
+
+/* -------- Passing parameters by reference ---------- */
+int bonusTax = 0;
+int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, ref bonusTax);
+Console.WriteLine($"Minimum bonus: {minimumBonus}\nBonusTax: {bonusTax}\nReceived bonus: {receivedBonus2}");
