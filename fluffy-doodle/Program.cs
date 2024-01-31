@@ -15,3 +15,7 @@ bethany.PerformWork();
 
 double receivedWageBethany = bethany.ReceiveWage(true);
 Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
+
+// simplified syntax of instantiation of an object
+Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30);
+george.DisplayEmployeeDetails();
