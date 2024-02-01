@@ -2,7 +2,7 @@
 
 Console.WriteLine("Hello, World!");
 
-Employee bethany = new Employee("Bethany", "Smith", "bethany@me.com", new DateTime(1979, 1, 16), 25);
+Employee bethany = new Employee("Bethany", "Smith", "bethany@me.com", new DateTime(1979, 1, 16), 25, EmployeeType.Research);
 
 // invoking methods on the new object
 bethany.DisplayEmployeeDetails();
@@ -40,3 +40,9 @@ Console.WriteLine($"Minimum bonus: {minimumBonus}\nReceived bonus: {receivedBonu
 int bonusTax;
 int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, out bonusTax);
 Console.WriteLine($"Minimum bonus: {minimumBonus}\nBonusTax: {bonusTax}\nReceived bonus: {receivedBonus2}");
+
+// working with structs
+WorkTask task;
+task.description = "Bake delicious pies";
+task.hours = 3;
+task.PerformWorkTask();
