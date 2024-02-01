@@ -46,3 +46,6 @@ WorkTask task;
 task.description = "Bake delicious pies";
 task.hours = 3;
 task.PerformWorkTask();
+
+//fully qualified name
+fluffy_doodle.Account.Customer customer = new fluffy_doodle.Account.Customer();
