@@ -21,7 +21,7 @@ bethany.DisplayEmployeeDetails();
 //bethany.DisplayEmployeeDetails();
 
 
-/* -------- Passing parameters by value---------- */
+#region Passing parameters by value
 
 bethany.PerformWork(25);
 
@@ -31,10 +31,13 @@ int receivedBonus = bethany.CalculateBonus(minimumBonus);
 // minimumBonus variable was passed in as a copy, therefore unchanged.
 Console.WriteLine($"Minimum bonus: {minimumBonus}\nReceived bonus: {receivedBonus}");
 
-/* -------- Passing parameters by reference ---------- */
+#endregion
+
+#region Passing parameters by reference 
 //int bonusTax = 0;
 //int receivedBonus2 = bethany.CalculateBonusAndBonusTax(minimumBonus, ref bonusTax);
 //Console.WriteLine($"Minimum bonus: {minimumBonus}\nBonusTax: {bonusTax}\nReceived bonus: {receivedBonus2}");
+#endregion
 
 /* -------- Using out ---------- */
 int bonusTax;

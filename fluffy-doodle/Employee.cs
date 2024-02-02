@@ -12,10 +12,14 @@
 
         public DateTime birthday;
 
+        // using enumerations
         public EmployeeType employeeType;
 
         // constant variable
         const int minimalHoursWorkedUnit = 1;
+
+        // using static members
+        public static double taxRate = 0.15;
 
         // constructor overloading
         public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0, EmployeeType.StoreManager) { }
@@ -46,15 +50,19 @@
         // using optional parameters
         public double ReceiveWage(bool resetHours = true)
         {
+            double wageBeforeTax = 0.0;
 
             if (employeeType == EmployeeType.Manager)
             {
-                wage = numberOfHoursWorked * hourlyRate * 1.25;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate * 1.25;
             }
             else
             {
-                wage = numberOfHoursWorked * hourlyRate;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate;
             }
+
+            double taxAmount = wageBeforeTax * taxRate;
+            wage = wageBeforeTax - taxAmount;
 
             Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hour(s) of work.");
 
@@ -92,7 +100,7 @@
 
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"\nFirst name: \t{firstName}\nLast name: \t{lastName}\nEmail: \t\t{email}\nBirthday: \t{birthday.ToShortDateString()}\n");
+            Console.WriteLine($"\nFirst name: \t{firstName}\nLast name: \t{lastName}\nEmail: \t\t{email}\nBirthday: \t{birthday.ToShortDateString()}\nTax rate: \t{taxRate}");
         }
 
     }
