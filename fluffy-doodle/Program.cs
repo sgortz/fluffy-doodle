@@ -11,7 +11,7 @@ bethany.DisplayEmployeeDetails();
 //Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
 
 // simplified syntax of instantiation of an object
-//Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30);
+Employee george = new("George", "Jones", "george@me.com", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
 //george.DisplayEmployeeDetails();
 
 /* -------- reference types vs value types ---------- */
@@ -52,3 +52,26 @@ task.PerformWorkTask();
 
 //fully qualified name
 fluffy_doodle.Account.Customer customer = new fluffy_doodle.Account.Customer();
+
+Employee mary = new("Mary", "Jones", "mary@snowball.be", new DateTime(1965, 1, 16), 30, EmployeeType.Manager);
+Employee bobJunior = new("Bob", "Spencer", "bob@snowball.be", new DateTime(1965, 1, 16), 30, EmployeeType.Research);
+Employee kevin = new("Kevin", "Marks", "kevin@snowball.be", new DateTime(1965, 1, 16), 17, EmployeeType.StoreManager);
+Employee kate = new("Kate", "Jones", "kate@snowball.be", new DateTime(1965, 1, 16), 10, EmployeeType.StoreManager);
+Employee kim = new("Kim", "Jacobs", "kim@snowball.be", new DateTime(1993, 8, 8), 20, EmployeeType.StoreManager);
+
+Employee[] employees = new Employee[7];
+employees[0] = bethany;
+employees[1] = george;
+employees[2] = mary;
+employees[3] = bobJunior;
+employees[4] = kevin;
+employees[5] = kate;
+employees[6] = kim;
+
+foreach(Employee e in employees)
+{
+    e.DisplayEmployeeDetails();
+    var numberOfHoursWorked = new Random().Next(25);
+    e.PerformWork(numberOfHoursWorked);
+    e.ReceiveWage();
+}
